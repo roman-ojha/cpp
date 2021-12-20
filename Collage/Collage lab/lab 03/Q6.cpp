@@ -1,0 +1,4 @@
+/*
+
+Write a program to demonstrate class type to class type comversion. take inpute of a time object and convert it a minute object.
+*/
