@@ -36,7 +36,7 @@ public:
              << "Name:" << name << endl;
         strcpy(name, n1);
         cout << "Name:" << name << endl;
-        strcpy(name, n2);
+        // strcpy(name, n2);
         cout << "Name:" << name << endl;
     }
 };
