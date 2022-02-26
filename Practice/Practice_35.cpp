@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <conio.h>
 using namespace std;
 
 class Complex
@@ -38,5 +39,6 @@ int main()
     Complex c1(1, 2), c2(3, 4), c3;
     c3 = c1.calculation(c2);
     c3.printdata();
+    getch();
     return 0;
 }

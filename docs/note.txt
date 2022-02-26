@@ -1,0 +1,1 @@
+-> g++ <app_name> (to run the application)
