@@ -19,6 +19,9 @@ int main()
 {
     Employee Fb[4];
     int i;
+
+
+
     for (i = 0; i < 4; i++)
     {
         Fb[i].setID();
