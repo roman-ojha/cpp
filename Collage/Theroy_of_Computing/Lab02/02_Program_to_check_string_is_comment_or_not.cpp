@@ -51,7 +51,7 @@ int main()
     enum states curr_state = q0;
     int isSingleComment = 0;
     cout << "Enter any string: ";
-    cin >> input;
+    gets(input);
     while (input[i] != '\0')
     {
         curr_state = checkComment(curr_state, input[i]);
@@ -67,7 +67,7 @@ int main()
     }
     else if (curr_state == qd)
     {
-        cout << "given string is a double line comment";
+        cout << "given string is a multi line comment";
     }
     else
     {
