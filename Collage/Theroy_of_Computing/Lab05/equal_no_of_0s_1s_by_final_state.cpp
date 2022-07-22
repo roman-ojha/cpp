@@ -7,7 +7,9 @@ using namespace std;
 
 enum states
 {
-    q0
+    q0,
+    q1,
+    qf
 };
 
 class Stack
@@ -25,7 +27,7 @@ public:
         if (top < MAX - 1)
             symbols[++top] = ch;
         else
-            cout << "stack fail" << endl;
+            printf("\n stack fail");
     }
 
     void pop()
@@ -36,7 +38,7 @@ public:
             top--;
         }
         else
-            cout << "stack empty" << endl;
+            printf("stack empty");
     }
 };
 
@@ -50,17 +52,19 @@ enum states delta(enum states state, char ch, char st_top)
     case q0:
         if (ch == 'e' && st_top == 'e')
         {
-            curr_state = q0;
+            curr_state = q1;
             s.push('$');
         }
-        else if (ch == '0' && (st_top == '$' || st_top == '0'))
+        break;
+    case q1:
+        if (ch == '0' && (st_top == '$' || st_top == '0'))
         {
-            curr_state = q0;
+            curr_state = q1;
             s.push(ch);
         }
         else if (ch == '1' && (st_top == '$' || st_top == '1'))
         {
-            curr_state = q0;
+            curr_state = q1;
             s.push(ch);
         }
         else if ((ch == '1' && st_top == '0') || (ch == '0' && st_top == '1'))
@@ -69,7 +73,10 @@ enum states delta(enum states state, char ch, char st_top)
             s.pop();
         }
         else if (ch == '\0' && st_top == '$')
-            curr_state = q0;
+            curr_state = qf;
+        break;
+    case qf:
+        curr_state = qf;
         break;
     }
     return curr_state;
@@ -84,7 +91,7 @@ int main()
     char ch = 'e';
     char st_top = 'e';
     curr_state = delta(curr_state, ch, st_top);
-    cout << "Enter a binary string: ";
+    printf("Enter a binary string\t");
     cin >> input;
     ch = input[i];
     st_top = s.get_stack_top();
@@ -96,9 +103,9 @@ int main()
         st_top = s.get_stack_top();
         c++;
     }
-    if (s.symbols[s.top] == '$')
-        cout << "The string " << input << "is accepted" << endl;
+    if (curr_state == qf)
+        printf("\n The string %s is accepted", input);
     else
-        cout << "rejected" << endl;
+        printf("rejected");
     return 0;
 }
