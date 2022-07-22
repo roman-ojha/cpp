@@ -9,7 +9,6 @@ enum states
 {
     q0,
     q1,
-    qf
 };
 
 class Stack
@@ -52,31 +51,35 @@ enum states delta(enum states state, char ch, char st_top)
     case q0:
         if (ch == 'e' && st_top == 'e')
         {
-            curr_state = q1;
+            curr_state = q0;
             s.push('$');
+        }
+        else if (ch == '0' && (st_top == '$' || st_top == '0'))
+        {
+            curr_state = q0;
+            s.push(ch);
+        }
+        else if (ch == '1' && st_top == '0')
+        {
+            curr_state = q1;
+            s.pop();
         }
         break;
     case q1:
-        if (ch == '0' && (st_top == '$' || st_top == '0'))
+        if (ch == '1' && st_top == '0')
         {
             curr_state = q1;
-            s.push(ch);
-        }
-        else if (ch == '1' && (st_top == '$' || st_top == '1'))
-        {
-            curr_state = q1;
-            s.push(ch);
-        }
-        else if ((ch == '1' && st_top == '0') || (ch == '0' && st_top == '1'))
-        {
-            curr_state = q0;
             s.pop();
         }
         else if (ch == '\0' && st_top == '$')
-            curr_state = qf;
-        break;
-    case qf:
-        curr_state = qf;
+        {
+            curr_state = q1;
+        }
+        else if ((ch == '0' || ch == '1') && st_top == '$')
+        {
+            curr_state = q1;
+            s.pop();
+        }
         break;
     }
     return curr_state;
@@ -103,7 +106,7 @@ int main()
         st_top = s.get_stack_top();
         c++;
     }
-    if (curr_state == qf)
+    if (s.symbols[s.top] == '$')
         cout << "The string " << input << " is accepted" << endl;
     else
         cout << "rejected" << endl;

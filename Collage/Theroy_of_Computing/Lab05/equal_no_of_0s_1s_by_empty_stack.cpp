@@ -97,7 +97,7 @@ int main()
         c++;
     }
     if (s.symbols[s.top] == '$')
-        cout << "The string " << input << "is accepted" << endl;
+        cout << "The string " << input << " is accepted" << endl;
     else
         cout << "rejected" << endl;
     return 0;
