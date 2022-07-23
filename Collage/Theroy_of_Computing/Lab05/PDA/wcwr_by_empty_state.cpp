@@ -56,6 +56,7 @@ enum states delta(enum states state, char ch, char st_top)
             curr_state = q1;
             s.push('$');
         }
+        break;
     case q1:
         if (ch == '0' && (st_top == '$' || st_top == '0'))
         {
@@ -69,20 +70,16 @@ enum states delta(enum states state, char ch, char st_top)
         }
         else if ((ch == '1' && st_top == '0') || (ch == '0' && st_top == '1'))
         {
-            curr_state = q0;
+            curr_state = q1;
             s.push(ch);
         }
-        else if ((ch == '1' && st_top == '0' || ch == '0' && st_top == '0') || (ch == '0' && st_top == '1' || ch == '1' && st_top == '1'))
+        else if (ch == 'c')
         {
             curr_state = q2;
-            s.push(ch);
         }
+        break;
     case q2:
-        if (ch == '1' && st_top == '$')
-        {
-            // haven't completed logic
-        }
-        else if (ch == '0' && st_top == '0')
+        if (ch == '0' && st_top == '0')
         {
             curr_state = q2;
             s.pop();
@@ -93,9 +90,14 @@ enum states delta(enum states state, char ch, char st_top)
             s.pop();
         }
         else if (ch == '\0' && st_top == '$')
+        {
+
             curr_state = q2;
-        s.pop();
+            // s.pop();
+        }
         break;
+    default:
+        curr_state = q2;
     }
     return curr_state;
 };

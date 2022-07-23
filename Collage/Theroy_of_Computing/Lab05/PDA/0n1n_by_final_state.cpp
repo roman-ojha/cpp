@@ -72,15 +72,15 @@ enum states delta(enum states state, char ch, char st_top)
             curr_state = q1;
             s.pop();
         }
-        else if (ch == '\0' && st_top == '$')
-        {
-            s.pop();
-            curr_state = qf;
-        }
         else if ((ch == '0' || ch == '1') && st_top == '$')
         {
             curr_state = q1;
             s.pop();
+        }
+        else if (ch == '\0' && st_top == '$')
+        {
+            s.pop();
+            curr_state = qf;
         }
         break;
     case qf:
