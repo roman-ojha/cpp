@@ -22,6 +22,7 @@ enum states delta(enum states s, char ch)
         {
             return qf;
         }
+        break;
     case q1:
         if (ch == '1')
         {
@@ -31,6 +32,7 @@ enum states delta(enum states s, char ch)
         {
             return qf;
         }
+        break;
     case q2:
         if (ch == '0' || ch == '1')
         {
@@ -40,10 +42,13 @@ enum states delta(enum states s, char ch)
         {
             return qf;
         }
+        break;
     case qf:
         return qf;
+        break;
     default:
         return qf;
+        break;
     }
 }
 
