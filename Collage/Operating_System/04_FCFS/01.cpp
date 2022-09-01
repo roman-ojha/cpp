@@ -1,4 +1,10 @@
 // FCFS
+/*
+Enter total number of processes(maximum 20):3
+nEnter Process Burst TimenP[1]:24
+P[2]:3
+P[3]:3
+*/
 #include <stdio.h>
 
 int main()
