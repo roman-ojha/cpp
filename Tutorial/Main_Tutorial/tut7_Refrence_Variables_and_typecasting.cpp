@@ -4,7 +4,6 @@ using namespace std;
 
 int c = 45; // this is the global variable
 
-
 int main()
 {
 
@@ -44,7 +43,7 @@ int main()
 
     cout << "The value of b is " << (int)b << endl;
     cout << "The value of b is " << int(b) << endl;
-    int c = int(b);
+    // int c = int(b);
 
     cout << "The expression is " << a + b << endl;
     cout << "The expression is " << a + int(b) << endl;

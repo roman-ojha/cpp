@@ -1,0 +1,71 @@
+/*
+    *) std::array:
+        -> syntax: std::array<T, N> array;
+            -> 'T' : type
+            -> 'N' : size
+        -> std::array is a class
+        -> std::array is a container that encapsulates fixed size arrays.
+        -> array size is needed at compile time.
+        -> Assign by value is actually by value.
+            -> when you will pass this array to the function you will get the copy of the array that you passed
+            -> it means that we will not get the pointer of the array
+            -> change in array passed on function is not reflect to the original array that we pass on argument
+            -> means, it is a pass by value
+        -> Throw exception if we will try to access non existing index element, which is not possible on default cpp array
+        -> Access Element:
+            a> at()
+            b> []
+            c> front() // return first element
+            d> back() // return last element
+            e> data() // give access to the underlying array, return actual pointer of array
+        -> EX: of array class could be like this
+            template <class T, class N>
+            class array
+            {
+                T arr[N];
+
+            public:
+                // Methods
+            };
+*/
+#include <iostream>
+// include std:array
+#include <array>
+using namespace std;
+
+int main()
+{
+    // Declaration
+    std::array<int, 5> arr1;
+    array<int, 5> arr2;
+
+    // Initialization
+    array<int, 5> arr3 = {5, 2, 1, 3, 4}; // Initializer list
+    array<int, 5> arr4{1, 2, 3, 4, 5};    // Uniform Initialization
+
+    // Assign using initializer list
+    array<int, 5> arr5;
+    arr5 = {1, 2, 3, 4, 5};
+
+    // Member functions:
+    // https://en.cppreference.com/w/cpp/container/array
+    // Access element:
+    cout << arr5.at(3) << endl;
+    cout << arr5[3] << endl;
+    cout << arr5.front() << endl;
+    cout << arr5.back() << endl;
+
+    // Get size of array:
+    cout << arr5.size() << endl;
+
+    for (int i = 0; i < arr5.size(); i++)
+    {
+        cout << arr5.data()[i];
+    }
+    cout << endl;
+
+    // fill the container with specified value
+    arr1.fill(10); // {10, 10, 10, 10, 10}
+
+    return 0;
+}
