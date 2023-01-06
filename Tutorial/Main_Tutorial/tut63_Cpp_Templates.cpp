@@ -3,27 +3,27 @@
 -> the template for the object is class  (object -> class)
 -> the template for the class is template (class -> template)
 
-we use template for to use same class variable and function for a different different data type 
+we use template for to use same class variable and function for a different different data type
 we can call template parameterized classed to understand the concept
 
 Why use template?
 -> to follow the DRY Principle
--> Generic programming (not spacific for one datatype)
+-> Generic programming (not specific for one datatype)
 
 Syntax:
     template <class T>
     class vector{
         T* arr;
     public:
-        Vecotr(T* ar)
+        Vector(T* ar)
         {arr=ar}
         // and many other method
     }
     // T can be int, float, char etc...
 
     Vector <int> my_vec(ptr);
-    Vecotr <float> my_fvec(ptr);
-    // here we are using different classes comming from the same template
+    Vector <float> my_fvec(ptr);
+    // here we are using different classes coming from the same template
 */
 
 // Macros
