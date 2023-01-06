@@ -8,141 +8,141 @@ using namespace std;
 /*
 Member functions
 (constructor)
- 
+
 constructs the vector
 (public member function)
 (destructor)
- 
+
 destructs the vector
 (public member function)
 operator=
- 
+
 assigns values to the container
 (public member function)
 assign
- 
+
 assigns values to the container
 (public member function)
 get_allocator
- 
+
 returns the associated allocator
 (public member function)
 Element access
 at
- 
+
 access specified element with bounds checking
 (public member function)
 operator[]
- 
+
 access specified element
 (public member function)
 front
- 
+
 access the first element
 (public member function)
 back
- 
+
 access the last element
 (public member function)
 data
- 
+
 direct access to the underlying array
 (public member function)
 Iterators
 begin
 cbegin
-  
+
 (C++11)
- 
+
 returns an iterator to the beginning
 (public member function)
 end
 cend
-  
+
 (C++11)
- 
+
 returns an iterator to the end
 (public member function)
 rbegin
 crbegin
-  
+
 (C++11)
- 
+
 returns a reverse iterator to the beginning
 (public member function)
 rend
 crend
-  
+
 (C++11)
- 
+
 returns a reverse iterator to the end
 (public member function)
 Capacity
 empty
- 
+
 checks whether the container is empty
 (public member function)
 size
- 
+
 returns the number of elements
 (public member function)
 max_size
- 
+
 returns the maximum possible number of elements
 (public member function)
 reserve
- 
+
 reserves storage
 (public member function)
 capacity
- 
+
 returns the number of elements that can be held in currently allocated storage
 (public member function)
 shrink_to_fit
-  
+
 (C++11)
- 
+
 reduces memory usage by freeing unused memory
 (public member function)
 Modifiers
 clear
- 
+
 clears the contents
 (public member function)
 insert
- 
+
 inserts elements
 (public member function)
 emplace
-  
+
 (C++11)
- 
+
 constructs element in-place
 (public member function)
 erase
- 
+
 erases elements
 (public member function)
 push_back
- 
+
 adds an element to the end
 (public member function)
 emplace_back
-  
+
 (C++11)
- 
+
 constructs an element in-place at the end
 (public member function)
 pop_back
- 
+
 removes the last element
 (public member function)
 resize
- 
+
 changes the number of elements stored
 (public member function)
 swap
- 
+
 swaps the contents
 (public member function)
 */
@@ -166,7 +166,7 @@ int main()
 
     // Ways to create a vector
     // vector<int> vec1;
-    vector<float> vec1; // Zero lenght float vector
+    vector<float> vec1; // Zero length float vector
 
     float element;
     int size;
@@ -202,7 +202,7 @@ int main()
     vector<char> vec2(4); // 4-element character vector
     vec2.push_back(5);
     // display(vec2);
-    vector<char> vec3(vec2); //4-element character vector from vec2
+    vector<char> vec3(vec2); // 4-element character vector from vec2
     // display(vec3);
     vector<int> vec4(6, 13); // 6-element vectory of 3s
     // vec4(<no.of element>, <vlaue>)

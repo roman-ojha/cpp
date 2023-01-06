@@ -67,5 +67,17 @@ int main()
     // fill the container with specified value
     arr1.fill(10); // {10, 10, 10, 10, 10}
 
+    // 2D array
+    array<array<int, 5>, 5> arr_2d; // size 5*5
+    arr_2d.fill({1, 2, 3, 4, 5});
+    for (int i = 0; i < arr_2d[0].size(); i++)
+    {
+        for (int j = 0; j < arr_2d.size(); j++)
+        {
+            cout << arr_2d[i][j] << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
