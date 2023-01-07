@@ -6,6 +6,10 @@
                     -> Stores data
                     -> use template classes
                     -> EX: Array, Linked List
+                    -> Type:
+                        a. Sequence container
+                        b. Order container
+                        c. Unordered container
             2) Algorithms
                     -> Built in algorithms to perform for container
                     -> Sorting
