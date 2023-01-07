@@ -8,6 +8,7 @@
         -> Array: Faster access
         -> Vector: Dynamically grow in size + Faster access
         -> Its size can grow and shrink dynamically, and no need to provide size at compile time.
+        -> It only allow push and pop from the end of the array
         -> Member function:
             -> https://en.cppreference.com/w/cpp/container/vector
             -> Element Access:
