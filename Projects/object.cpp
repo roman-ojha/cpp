@@ -1,58 +1,62 @@
 #include <iostream>
-
+#include <variant>
+#include <string>
+#include <map>
 using namespace std;
-
-template <class T1, class T2>
-class ll
-{
-private:
-    T1 key;
-    T2 value;
-
-public:
-    ll *next;
-    ll *previous;
-    void insert(T1 key, T2 value, ll *foot)
-    {
-        this->key = key;
-        this->value = value;
-        foot->previous->next = this;
-        this->next = foot;
-        this->previous = foot->previous;
-        this->previous = this;
-    }
-};
 
 class object
 {
-    ll<int, int> *head;
-    ll<int, int> *foot;
+private:
+    // different type that we want to store as value
+    using obj_type = std::variant<int, std::string, bool, double>;
+
+    // this store the key->value, value of 'obj_type'
+    std::map<string, obj_type> obj;
 
 public:
-    object()
+    // structure that will return string type by getting variant type
+    struct make_string_functor
     {
-        this->head->next = this->foot;
-        this->head->previous = NULL;
-        this->foot->next = NULL;
-        this->foot->previous = this->head;
-    }
+        std::string operator()(const std::string &x) const { return x; }
+        std::string operator()(int x) const { return std::to_string(x); }
+        std::string operator()(bool x) const { return std::to_string(x); }
+        std::string operator()(double x) const { return std::to_string(x); }
+    };
+    // Operator overloading [] to set and get the key->value
+    obj_type &operator[](string key) { return this->obj[key]; }
 
-    template <class Key, class Value>
-    void insert(Key key, Value value)
+    // return value after converting it to string
+    string getV(obj_type v)
     {
-        ll<Key, Value> l;
-        l->insert(key, value, this->foot);
-    }
-    void print()
-    {
+
+        return std::visit(make_string_functor(), v);
     }
 };
 
-int main()
-{
-    object r;
-    r.insert<string, string>("name", "roman");
-    r.insert<string, int>("id", 3);
-    r.print();
-    return 0;
-}
+// int main()
+// {
+//     // std::map<string, obj_type> obj;
+//     // obj["name"] = "roman";
+//     // obj["id"] = 3;
+//     // obj["male"] = true;
+//     // obj["mark"] = 33.3;
+
+//     // cout << "name: " << getV(obj["name"]) << endl;
+//     // cout << "id: " << getV(obj["id"]) << endl;
+//     // cout << "male: " << getV(obj["male"]) << endl;
+//     // cout << "mark: " << getV(obj["mark"]) << endl;
+
+//     object obj;
+//     // assigning different type of value inside one object
+//     obj["name"] = "roman";
+//     obj["id"] = 3;
+//     obj["male"] = true;
+//     obj["mark"] = 33.3;
+
+//     cout << "name: " << obj.getV(obj["name"]) << endl;
+//     cout << "id: " << obj.getV(obj["id"]) << endl;
+//     cout << "male: " << obj.getV(obj["male"]) << endl;
+//     cout << "mark: " << obj.getV(obj["mark"]) << endl;
+
+//     return 0;
+// }

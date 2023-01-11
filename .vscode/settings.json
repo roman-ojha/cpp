@@ -89,6 +89,8 @@
     "set": "cpp",
     "typeindex": "cpp",
     "unordered_set": "cpp",
-    "valarray": "cpp"
-  }
+    "valarray": "cpp",
+    "variant": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }
