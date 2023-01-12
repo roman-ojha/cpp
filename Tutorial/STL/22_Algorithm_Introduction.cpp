@@ -8,6 +8,7 @@
             5. etc..
         -> Algorithm are applied to range of element.
         -> <algorithm> header is used tog et all algorithms in stl.
+        -> https://en.cppreference.com/w/cpp/algorithm
 */
 
 // EX:

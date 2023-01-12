@@ -1,6 +1,8 @@
 /*
     *) std::is_sort
-        -> Check if the elements is range (first, last) are sorted in non-descending order
+        -> Check if the elements is range [first, last) are sorted in non-descending order
+            -> [ , ] : including
+            -> ), ( : excluding
         => Types:
             1. Sorting integral data types
             2. Sorting user defined data types
