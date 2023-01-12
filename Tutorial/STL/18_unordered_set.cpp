@@ -17,6 +17,7 @@
             -> bucket 2 : [4.2, 9.2]
             -> bucket 9 : [6.9]
             -> The is not the exact process that it use to insert the element into bucket but idea is same.
+        -> NOTE: but if we have to store millions of data into bucket again in that case searching will take huge amount of time.
 */
 
 #include <iostream>
@@ -44,5 +45,9 @@ int main()
         cout << elm << " ";
     }
     cout << endl;
+
+    // Todo.
+    // Methods:
+    // Using User defined type of element
     return 0;
 }
