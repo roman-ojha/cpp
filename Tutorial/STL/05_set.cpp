@@ -1,6 +1,9 @@
 /*
     *) std::set
         -> Syntax: std::set<T> objectName;
+        -> Unique Object
+        -> Sorted Order
+        -> Or it can called as Ordered Set
         -> std::set is an Associative Container that contains a sorted set of unique object of type key.
         -> It is usually implemented using Red-Black Tree.
         -> Insertion, Removal, Search have logarithmic complexity.
