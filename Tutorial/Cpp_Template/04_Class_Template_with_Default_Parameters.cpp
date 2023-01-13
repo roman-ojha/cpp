@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// this is the way to put default argumment to the template
+// this is the way to put default argument to the template
 template <class T1 = int, class T2 = float, class T3 = char>
 class Roman
 {

@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 
-Class template with multiple tarameters
+Class template with multiple parameters
 template<class T1,class T2>
 class nameOfClass
 {

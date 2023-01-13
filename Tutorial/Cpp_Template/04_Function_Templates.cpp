@@ -13,10 +13,10 @@ using namespace std;
 //     return aveg;
 // }
 
-// this is the way to make a funciton which do the same operation but have a different data type so which does not follow the DRY principle so,
+// this is the way to make a function which do the same operation but have a different data type so which does not follow the DRY principle so,
 // we can use the function template to make a single function and have a different data type operation
 
-// Funciton Template
+// Function Template
 
 template <class T1, class T2>
 T2 funcAverage2(T1 a, T2 b)

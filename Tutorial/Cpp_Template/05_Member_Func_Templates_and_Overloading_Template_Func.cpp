@@ -13,7 +13,7 @@ public:
     void display();
 };
 
-// after using template in a class normaly we can't put defination of member function outside the class
+// after using template in a class normally we can't put definition of member function outside the class
 // so, to solve the problem of the we have to make member function template
 template <class T>
 void Roman<T>::display()
@@ -23,7 +23,7 @@ void Roman<T>::display()
 
 // Same function with and without template
 //---------------------------------------------------
-// here have the same function but while calling , it call the higest priority function
+// here have the same function but while calling , it call the highest priority function
 void func(int a)
 {
     cout << "I am first func() " << a << endl;
