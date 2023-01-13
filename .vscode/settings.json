@@ -93,7 +93,8 @@
     "variant": "cpp",
     "coroutine": "cpp",
     "resumable": "cpp",
-    "execution": "cpp"
+    "execution": "cpp",
+    "span": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabled"
 }
