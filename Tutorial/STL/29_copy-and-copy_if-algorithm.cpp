@@ -32,6 +32,7 @@ int main()
     copy(from_vector.begin(), from_vector.end(), to_vector1.begin());
     // printing the vector where we copy the value
     print(to_vector1);
+    // 0 1 2 3 4 5 6 7 8 9
 
     // Or, alternatively
     // here we will not specify the size of the vector initially
@@ -39,11 +40,13 @@ int main()
     // because of that we will use 'back_inserter'
     copy(from_vector.begin(), from_vector.end(), back_inserter(to_vector2));
     print(to_vector2);
+    // 0 1 2 3 4 5 6 7 8 9
 
     // Or we can just use assignment operator to copy one container element to another
     vector<int> to_vector = from_vector;
     // The only benefit that we have using std::copy is we can partially copy the element from the container
     print(to_vector);
+    // 0 1 2 3 4 5 6 7 8 9
 
     // copy_if algorithm if we want to copy according to the condition
     vector<int> to_vector3(5);
@@ -59,6 +62,7 @@ int main()
                 // another way to check odd number
             });
     print(to_vector3);
+    // 1 3 5 7 9
 
     return 0;
 }
