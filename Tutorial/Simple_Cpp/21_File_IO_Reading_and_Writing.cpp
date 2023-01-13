@@ -13,7 +13,7 @@ so, The useful classes for working with files in c++ are:
 
 */
 /*
-In order to work with files in c++, you will have to open it. 
+In order to work with files in c++, you will have to open it.
 primarily, there are 2 ways to open a file:
 1. using the constructor
 2. using the mamber function open() of the class
@@ -24,12 +24,12 @@ int main()
     string st2, st3;
 
     // Opening file using constructor and writing it
-    ofstream out("tut60_FileA.txt"); //Write operation
+    ofstream out("21_FileA.txt"); // Write operation
     // here we are creating out object
     out << st;
 
     // Opening files using constructor and reading it
-    ifstream in("tut60_FileB.txt"); // Read operation
+    ifstream in("22_FileB.txt"); // Read operation
     in >> st2;
 
     // if we want to get the infomation of the file through this method then only the first word in the file will read

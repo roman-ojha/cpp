@@ -18,7 +18,7 @@ int main()
     // closing file through the close() member function of the class ofstream
     rout.close();
 
-    ifstream rin("tut61A.txt");
+    ifstream rin("22A.txt");
     string contect;
     // rin >> contect;
     getline(rin, contect);
