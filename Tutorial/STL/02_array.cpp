@@ -33,6 +33,20 @@
 #include <array>
 using namespace std;
 
+std::array<string, 5> *get_array(std::array<string, 5> *names)
+{
+    // by default array that we get in function is copy by value
+    // but here we are copying array by reference
+    (*names)[0] = "Harry";
+    for (string name : (*names))
+    {
+        cout << name << " ";
+    }
+    cout << endl;
+
+    return names;
+}
+
 int main()
 {
     // Declaration
@@ -54,11 +68,10 @@ int main()
     cout << arr5[3] << endl;
     cout << arr5.front() << endl;
     cout << arr5.back() << endl;
-
     // Get size of array:
     cout << arr5.size() << endl;
 
-    for (int i = 0; i < arr5.size(); i++)
+    for (int i = 0; i < (int)arr5.size(); i++)
     {
         cout << arr5.data()[i];
     }
@@ -78,6 +91,29 @@ int main()
         }
         cout << endl;
     }
+
+    // EX1:
+    std::array<std::string, 5> names = {"Roman", "Razz", "Jack"};
+    std::array<std::string, 5> *names2 = get_array(&names);
+    (*names2)[0] = "Ram";
+    for (string name : names)
+    {
+        cout << name << " ";
+    }
+    cout << endl;
+
+    for (std::array<std::string, 5>::iterator it = (*names2).begin(); it != (*names2).end(); it++)
+    {
+        cout << (*it) << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < (int)(*names2).size(); i++)
+    {
+
+        cout << (*names2)[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
