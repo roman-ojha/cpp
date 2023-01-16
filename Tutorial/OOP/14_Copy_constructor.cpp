@@ -16,7 +16,7 @@ public:
         a = num;
     }
     // When no copy constructor is found, compiler supplies its own copy constructor
-    Number(Number &obj) // &obj is a refrence variable
+    Number(Number &obj) // &obj is a reference variable
     {
         cout << "Copy constructor called!!!" << endl;
         a = obj.a;
