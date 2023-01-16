@@ -65,6 +65,68 @@ int main()
     cout << arr3.back() << endl;
 
     // Methods:
-    // ToDo.
+    std::vector<std::string> names{"roman", "razz", "hari", "harry", "ram", "sita"};
+
+    // Insert at the end of the vector
+    names.push_back("tom");
+    names.push_back("sita");
+
+    // Insert into specific position
+    names.insert(names.begin(), "Anny");
+    names.insert(names.begin() + 3, "Anny");
+
+    std::vector<std::string>::iterator itb = names.begin();
+    std::vector<std::string>::iterator ite = names.end();
+
+    std::cout << "Begin: " << (*names.begin()) << std::endl;
+    // Begin: Anny
+    std::cout << "End: " << (*(names.end() - 1)) << std::endl;
+    // End: Sita
+
+    std::cout << "At 3: " << names.at(3) << std::endl;
+    std::cout << "At 4: " << names[4] << std::endl;
+
+    names.pop_back();
+
+    std::cout << "Front: " << names.front() << std::endl;
+    // Front: Anny
+    std::cout << "Back: " << names.back() << std::endl;
+    // Back: tom
+
+    std::cout << "Size: " << names.size() << std::endl;
+    // Size: 9
+
+    std::cout << "Max Size: " << names.max_size() << std::endl;
+    // Max Size: 288230376151711743
+
+    std::cout << "Capacity: " << names.capacity() << std::endl;
+    // Capacity: 12
+
+    names.shrink_to_fit();
+    std::cout << "Capacity: " << names.capacity() << std::endl;
+    // Capacity: 9
+
+    // return the underlying array pointer
+    std::string *data = names.data();
+    std::cout << *(data + 1) << std::endl;
+    // roman
+
+    for (std::string name : names)
+    {
+        std::cout << name << " ";
+    }
+    std::cout << std::endl;
+
+    for (auto it = names.begin(); it != names.end(); it++)
+    {
+        std::cout << (*it) << " ";
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i < (int)names.size(); i++)
+    {
+        std::cout << names[i] << " ";
+    }
+    std::cout << std::endl;
     return 0;
 }
