@@ -42,6 +42,27 @@ public:
     // because we use this function now we can use 'std::greater<Person>' while initializing the set
 };
 
+class User
+{
+public:
+    std::string name;
+    std::int64_t id;
+
+    User(std::int64_t id, std::string name)
+    {
+        this->name = name;
+        this->id = id;
+    }
+    bool operator<(const User &user) const
+    {
+        return this->id < user.id;
+    }
+    bool operator>(const User &user) const
+    {
+        return this->id > user.id;
+    }
+};
+
 int main()
 {
     // Set Sorted, Unique in ascending order
@@ -74,6 +95,22 @@ int main()
     cout << endl;
 
     // Methods:
-    // ToDo.
+    std::set<User, std::greater<User>> users = {{1, "roman"}, {2, "razz"}};
+
+    // Insert new element and it will sort according to the inserted element
+    users.insert({0, "jack"});
+
+    std::cout << "Size: " << users.size() << std::endl;
+    std::cout << "Is Empty: " << users.empty() << std::endl;
+
+    // Iterator
+    std::set<User>::iterator itb = users.begin();
+    auto ite = users.end();
+
+    for (User user : users)
+    {
+        std::cout << user.id << ": " << user.name << std::endl;
+    }
+    std::cout << std::endl;
     return 0;
 }

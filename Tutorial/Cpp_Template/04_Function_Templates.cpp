@@ -25,7 +25,8 @@ T2 funcAverage2(T1 a, T2 b)
     return aveg;
 }
 
-template <class T>
+// we can use 'typename' incase of function template
+template <typename T>
 void swapp(T &a, T &b)
 {
     T temp = a;
@@ -42,6 +43,7 @@ int main()
     a = funcAverage2<int, float>(6, 2.5);
     cout << a << endl;
     int x = a, y = 6;
+    cout << "X=" << x << " Y=" << y << endl;
     swapp(x, y);
     cout << "X=" << x << " Y=" << y << endl;
     return 0;
