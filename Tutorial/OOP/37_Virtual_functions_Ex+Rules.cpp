@@ -14,7 +14,7 @@ public:
         title = s;
         rating = r;
     }
-    virtual void display() {} // if we dont use virtual in this function then base class function will call but after using virtual function dericed class function will call if function exist with same function name
+    virtual void display() {} // if we dont use virtual in this function then base class function will call but after using virtual function derived class function will call if function exist with same function name
 };
 
 class CWHVideo : public CWH
@@ -31,7 +31,6 @@ public:
         cout << "This is an amazing video with title " << title << endl;
         cout << "Ratings: " << rating << " out of 5 stars" << endl;
         cout << "Length of this video is: " << videoLength << " minutes" << endl;
-   
     }
 };
 class CWHText : public CWH
@@ -78,10 +77,10 @@ int main()
     return 0;
 }
 
-/* 
+/*
 Rules for virtual functions
 1) They cannot be static
-2) They are accessed by object pointers  
+2) They are accessed by object pointers
 3) Virtual functions can be a friend of another class
 4) A virtual function in the base class might not be used.
 5) If a virtual function is defined in a base class, there is no necessity of redefining it in the derived class

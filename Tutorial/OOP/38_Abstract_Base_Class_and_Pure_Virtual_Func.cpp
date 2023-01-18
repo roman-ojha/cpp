@@ -18,7 +18,7 @@ public:
     virtual void display() = 0; // do-nothing function or pure virtual function
     // now this function will not called and display() function should be define in the derived class if you did't define pure virtual function in derived class then compiler will throw an error
     // so this class is made to make a another derived class from this base class so we can called this Abstract base class
-    // to make a Abstract base class pure viutual function is used
+    // to make a Abstract base class pure virtual function is used
     // Abstract base class should have atleast one pure virtual function
 };
 class CWHVideo : public CWH
