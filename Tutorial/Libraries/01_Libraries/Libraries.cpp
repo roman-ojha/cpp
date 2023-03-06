@@ -14,13 +14,17 @@
             -> lib / lib64 (folder contains .lib files)
             -> license.md
             -> readme.md
-        => you use a header file to communicate with libraries, which container the main code of the libary
+        => you use a header file to communicate with libraries, which container the code, or help to get the function and class available from that library
+        => or header file container kind of simple declaration
         -> while coding you will include the header files, and the header files itself will locate the needed .dll or .lib file in order to make the code work
+        => and we have to point out linker to the libraries files, so linker link the library files so the function definations will get linked correctly
     *) What is .dll and .lib files?
         -> .lib = Static library
+            -> static libraries will get added inside you executable file
             -> Static library uses the .lib files to basically recompile code whenever we compile our own code
             -> the program that you create at the end will contain all the coded need inside the executable
         -> .dll = Dynamic lik library
+            -> dynamic libraries will get linked compiled binaries in run time
             => Dynamic library can't be compile together with you code
             => so the program still needs access to that particular .dll file ever after compiling
             -> os, it means that your compile executable will be smaller

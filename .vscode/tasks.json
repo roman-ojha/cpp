@@ -11,7 +11,9 @@
         "-Wall",
         "${file}",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "-I",
+        "D:\\Programming\\Cpp\\Tutorial\\Libraries\\02_Using_Binary_Library\\include"
       ],
       "options": {
         "cwd": "${fileDirname}"
