@@ -13,7 +13,7 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-I",
-        "D:\\Programming\\Cpp\\Tutorial\\Libraries\\02_Using_Binary_Library\\include"
+        "D:\\Programming\\Cpp\\Notes\\Libraries\\02_Using_Binary_Library\\include"
       ],
       "options": {
         "cwd": "${fileDirname}"

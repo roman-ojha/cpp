@@ -10,7 +10,7 @@ using namespace std;
         -> if we are compile 64-bit application we need 64-bit binaries
         -> if we are compile 32-bit application we need 32-bit binaries
     -> we will use 64-bit binaries
-    =>
+    => here now we will add those 'include' & 'lib' files & folder into current working project directory of 'include' & 'lib' folder
     -> and here we will use Static linking of binary files
     *) Visual studio configuration
         -> for Visual studio setup: https://youtu.be/or1dAmUO8k0?t=609
@@ -37,16 +37,23 @@ using namespace std;
                         "D:\\Programming\\Cpp\\Tutorial\\Libraries\\02_Using_Binary_Library\\include"
                     ],
 
-            => after you compile the file we will get the binary file now to run the application it is necessary to link the lib files:
+            => after you compile the file we will get the binary file now to run the application it is necessary to link the lib files with executable files:
                 -> g++ .\<file_name>.o -o <file_name>.exe -L"<lib_folder_directory>" -l<lib_file_name> -l<lib_file_name> -L"<another_lib_folder_directory>" -l<lib_file_name> -l<lib_file_name>
                 -> EX:
                 -> g++ .\main.o -o main.exe -L"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\lib" -lglfw3
 
             => after this we will get the executable file
             => to run the exe file run: main.exe
+
+            => if you want to run all of them at once then:
+                -> g++ .\main.cpp -o main -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -L"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\lib" -lglfw3
 */
 int main()
 {
     cout << "hello" << endl;
+    // if you want to use those libraries just by including '.h' file will not created the executable file
+    // so, for that we have to link those libraries like '.lib' or '.dll' files
+    // so only libraries contain the definition of the header file functions
+    // int a = glfwInit();
     return 0;
 }

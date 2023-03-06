@@ -5,7 +5,7 @@
       // "includePath": ["${workspaceFolder}/**"],
       "includePath": [
         "${workspaceFolder}/**",
-        "D:\\Programming\\Cpp\\Tutorial\\Libraries\\02_Using_Binary_Library\\include"
+        "D:\\Programming\\Cpp\\Notes\\Libraries\\02_Using_Binary_Library\\include"
       ],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
       "windowsSdkVersion": "10.0.19041.0",
