@@ -1,3 +1,0 @@
-[submodule "Notes/MySQL"]
-	path = Notes/MySQL
-	url = git@github.com:roman-ojha/cpp-mysql-curd.git
