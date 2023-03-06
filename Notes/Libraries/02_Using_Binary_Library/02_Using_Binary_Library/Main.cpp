@@ -1,4 +1,4 @@
-#include<GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
 #include <iostream>
 using namespace std;
 
@@ -59,3 +59,11 @@ int main()
     cout << a << endl;
     return 0;
 }
+
+/*
+    Some documentations:
+        -> https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s23.html
+        -> https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s23.html
+        -> https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html
+        -> https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options-listed-by-category?view=msvc-160#linking
+*/
