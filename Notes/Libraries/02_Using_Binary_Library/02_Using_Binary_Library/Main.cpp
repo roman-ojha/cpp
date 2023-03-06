@@ -1,4 +1,4 @@
-//#include <GLFW/glfw3.h>
+#include<GLFW/glfw3.h>
 #include <iostream>
 using namespace std;
 
@@ -14,6 +14,7 @@ using namespace std;
     -> and here we will use Static linking of binary files
     *) Visual studio configuration
         -> for Visual studio setup: https://youtu.be/or1dAmUO8k0?t=609
+        -> linking binary file/libraries into visual studio: https://youtu.be/or1dAmUO8k0?t=807
     *) Visual studio code configuration
         -> for vsCode you need to configure 'c_cpp_properties.json' inside .vscode
             -> https://youtu.be/b2Ms6v8kRv4
@@ -54,6 +55,7 @@ int main()
     // if you want to use those libraries just by including '.h' file will not created the executable file
     // so, for that we have to link those libraries like '.lib' or '.dll' files
     // so only libraries contain the definition of the header file functions
-    // int a = glfwInit();
+    int a = glfwInit();
+    cout << a << endl;
     return 0;
 }
