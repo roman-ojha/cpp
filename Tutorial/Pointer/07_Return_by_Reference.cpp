@@ -16,7 +16,6 @@ int main()
 {
 
     int a = 3;
-    // Call by reference:
     // here it return the reference of 'a' variable
     int aReturn = returnReference(a);
     cout << "aReturn: " << aReturn << endl; // 3
