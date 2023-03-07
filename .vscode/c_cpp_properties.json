@@ -5,7 +5,8 @@
       // "includePath": ["${workspaceFolder}/**"],
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/Notes/Libraries/02_Using_Binary_Library/include"
+        "${workspaceFolder}/Notes/Libraries/02_Using_Binary_Library/include",
+        "E:/vcpkg/installed/x64-windows/include"
       ],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
       "windowsSdkVersion": "10.0.19041.0",
