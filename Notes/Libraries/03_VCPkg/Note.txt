@@ -1,4 +1,3 @@
-/*
     *) VCPkg:
         ->  Vc Package help you manage c/c++ project libraries on windows/linux/mac
         -> https://github.com/Microsoft/vcpkg
@@ -16,8 +15,8 @@
             -> now you can use vcpkg installed packages into you visual studio project
             -> NOTE: because we integrate vcpkg into visual studio we don't have to manually specify the path of headers & linkers & linkers file name, it will automatically handle these things
         -> after that you will get CMake command:
-            -> "-DCMAKE_TOOLCHAIN_FILE=D:/vcpkg/scripts/buildsystems/vcpkg.cmake"
-            -> which we will use letter if we use CMake
+            -> "-DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            -> which we will use letter while configuring vscode
         -> you can see the list of command available for vcpkg:
             -> https://learn.microsoft.com/en-us/vcpkg/commands/common-options
         -> Let's put the vcpkg root project into environment variable so that we can use 'vcpkg' command any where
@@ -75,5 +74,35 @@
 
 
     *) Setup for Visual studio code:
-        ->
-*/
+        -> first install c/c++ & cmake extension
+        -> Steps:
+            => on command palate: >cmake: quick start
+                -> let's go with 'amd64'
+                -> name the project
+            => we will now configure the 'settings.json' for vscode workspace inside './vscode' folder
+            => after we configure settings we will build the project:
+                -> command palate: >CMake: Build
+            => now it will create the build app inside './build' folder
+            *) Configure Debugger
+                => now for debug application we will use start debugging
+                    => for that on 'Run' tab press 'Start debugging'
+                    => for configuring 'launch.json' we will use 'C/C++ (Windows) Launch'
+                    => and we will provide the debug program(.exe) file path inside the config file: "${workspaceFolder}/build/Debug/demo.exe"
+                    => then we will debug, using EX: f5 key
+            
+            *) Including Packages
+                => vcpkg install raylib raylib:x64-windows
+                => for example we will use 'raylib' package:
+                    -> https://www.raylib.com/
+                => and grab some examples:
+                    -> https://www.raylib.com/examples.html
+                => now we will modify the './CMakeLists.txt'
+                => after modification we will run:
+                    -> command palate: >CMake: Build
+                    => after build run the executable with linked libraries:
+                        -> f5
+
+                => NOTE: for the release build you might have to configure the other way
+
+    *) Step by step guid:
+        -> https://gamefromscratch.com/vcpkg-cpp-easy-mode-step-by-step-tutorial/
