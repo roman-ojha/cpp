@@ -1,3 +1,6 @@
 [submodule "Notes/MySQL"]
 	path = Notes/MySQL
 	url = git@github.com:roman-ojha/cpp-mysql-curd.git
+[submodule "Notes/Libraries/04_CMake"]
+	path = Notes/Libraries/04_CMake
+	url = git@github.com:roman-ojha/cmake.git

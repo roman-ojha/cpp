@@ -1,0 +1,19 @@
+=> I used : https://github.com/laserpants/dotenv-cpp repo
+=> I will just include .header file because it have all the required program to use .env file inside cpp
+    => https://github.com/laserpants/dotenv-cpp/blob/master/include/laserpants/dotenv/dotenv.h
+=> Now There is an error in line: 375, it uses the 'setenv()' function but that throws error on my computer
+=> so rather i will use:
+    -> _putenv_s(name.c_str(), val.c_str());
+
+=> after that we will create CMakeList.txt file where i will include the header package
+=> Then use vscode extension for CMake build:
+
+=> Or I can use 'cmake' & 'make' command
+    -> cmake -S . -B build -G "Unix Makefiles"
+    -> cd build
+    -> make
+    -> now we will get the executable file
+
+=> or we can run the command to build and create executable:
+    -> first compile code: g++ -c .\main.cpp -I"include"
+    -> create executable: g++ .\main.o -o main.exe

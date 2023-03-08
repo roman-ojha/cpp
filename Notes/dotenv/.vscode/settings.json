@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "system_error": "cpp",
+    "xlocale": "cpp",
+    "xstring": "cpp",
+    "utility": "cpp",
+    "iostream": "cpp"
+  }
+}

@@ -1,0 +1,21 @@
+*) Compile code
+    => g++ -c .\<file_name>.cpp
+    *) Compile code with other include directories
+        => g++ -c .\<file_name>.cpp -I"<path_to_include>"
+        => EX: g++ .\main.cpp -I"include"
+        => EX:  g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
+    *) Create executable After compile:
+        => g++ .\<compiled_output_file>.o -o <executable_output_file_name>.exe
+
+    *) Created executable with linking binaries libraries:
+        => g++ .\<compiled_output_file>.o -o <exe_file_name>.exe -L"<lib_folder_path>" -l<lib_file_name>
+        => EX: g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
+
+    *) All of them at once:
+        =>  g++ .\main.cpp -o main -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -L"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\lib" -lglfw3
+
+*) Create executable directly:
+    => g++ .\<file_name>.cpp
+    *) With include directories
+    => g++ .\<file_name>.cpp -I"<path_to_include>"
+    => EX: g++ .\main.cpp -I"include"
