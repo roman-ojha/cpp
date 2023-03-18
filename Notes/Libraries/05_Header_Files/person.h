@@ -1,4 +1,12 @@
 #pragma once
+// in c++ '#' is called as preprocessor directive
+// it means that it will going to be evaluated by the c++ before this file will get compile
+// pragma is the instructor that get send to the compiler and the preprocessor
+// pragma once is a guard to ensure that we will not include this header file more then once into single translation unit, or cpp file
+// but it doesn't prevent to include this header file into multiple places in our program
+// so this means that this will prevent to include multiple header file of this file when you have chain of include same header file into different cpp files
+// we can solve this problem just by using '#ifndef' as well
+
 #include <iostream>
 
 // header file containing the declaration of 'Person' class
@@ -14,7 +22,7 @@ public:
     int id;
     std::string name;
     std::string gender;
-    Person(int id, std::string name, std::string gender);
+    Person(int, std::string, std::string);
     void getPerson();
     static std::string getClassName();
     ~Person();

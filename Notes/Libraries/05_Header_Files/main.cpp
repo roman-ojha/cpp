@@ -55,6 +55,21 @@ void log(const char *message);
         -> g++ .\main.cpp person.cpp -o main; .\main.exe
 */
 
+/*
+    *) Different way to include header file
+        -> using <>
+            -> while compile the program if it know or we specify the include path of those include folder we can use '<>' to include the header file
+        -> using ""
+            -> we use this to include header file that are relative to the current file
+            -> or if we don't want to use '<>' in that case also we can use ""
+    *) Different between '.h' and just not having .h header file:
+        -> just to differentiate between the c language header file and c++ language header file
+        -> '.h' is of C standard library header files
+            -> EX: #include <string.h> // is a C standard header file
+        -> not having .h is if C++ standard library header files
+            -> EX: #include <iostream> // is a C++ standard header file
+*/
+
 int main()
 {
     log("Hello world");
