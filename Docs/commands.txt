@@ -4,6 +4,7 @@
         => g++ -c .\<file_name>.cpp -I"<path_to_include>"
         => EX: g++ .\main.cpp -I"include"
         => EX:  g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
+        
     *) Create executable After compile:
         => g++ .\<compiled_output_file>.o -o <executable_output_file_name>.exe
 
