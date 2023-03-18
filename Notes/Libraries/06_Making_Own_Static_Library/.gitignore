@@ -1,3 +1,8 @@
-/x64
+x64
 /02_Using_Binary_Library/x64
 /.vs
+*.o
+*.exe
+/bin/*.obj
+/bin/*.exe
+/bin/static/*.lib

@@ -5,7 +5,7 @@
 */
 
 /*
-    *) Setup:
+    *) Setup for visual studio:
         -> we will create this library using visual studio IDE
         -> where we will create to different project:
             1. Game:
@@ -25,3 +25,31 @@
         -> but visual studio can automatically link this library because it is inside the same solution
         -> for that we can right click on 'Game' solution and add -> reference & then add the 'Engine' project
 */
+
+/*
+    *) Setup for command line:
+        -> https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/create-libraries/index
+        -> for this we will use 'log.cpp' that contain definition of the 'log.h' header file
+        -> and 'log.cpp' is the file from which we will create the static library '.lib' fil
+        => Creating compiled object file first:
+            -> g++ -c .\log.cpp -o log.o
+            -> Or: g++ -c .\log.cpp -o log.obj
+            -> g++ -c .\log.cpp -o bin/log.obj
+        => Creating static library:
+            -> A static library is basically a set of object files that were copied into a single file with the suffix .lib.
+            -> Or: ar rcs log.lib log.obj
+            -> Or: ar rcs bin/static/log.lib bin/log.o
+        => Create Executable file with linked 'log.lib' static binary library file
+            -> g++ .\main.cpp -o bin/main -L"bin/static" -llog
+
+    *) Run this command to run chain of command to execute the program:
+        -> g++ -c .\log.cpp -o bin/log.obj; ar rcs bin/static/log.lib bin/log.obj; g++ .\main.cpp -o bin/main -L"bin/static" -llog; .\bin\main.exe
+*/
+
+#include "log.h"
+
+int main()
+{
+    print::PrintMessage();
+    return 0;
+}

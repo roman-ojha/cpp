@@ -12,12 +12,9 @@
 //#include <Engine.h>
 #include "Engine.h"
 
-
-
-
 // just by including the header file it will going to compile successfully but can't build and create executable
 // because we have not linked the static library or the definition of the header file
 int main() {
-
+	engine::PrintMessage();
 	return 0;
 }
