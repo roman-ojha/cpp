@@ -1,0 +1,17 @@
+1. '.cpp'
+    -> containing main cpp code
+
+2. '.h'
+    -> containing only declaration of the main code
+
+3. '.o'
+    -> containing the compiled version of .cpp file
+
+4. '.lib'
+    -> containing the static library, which we will link while compiling the main program
+
+5. '.dll'
+    -> containing the dynamic library, which will get linked while running the program
+
+6. '.exe'
+    -> cpp executable program file / application
