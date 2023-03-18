@@ -1,0 +1,3 @@
+-> we will use 'ctypes' library to call c/c++ function & classes inside the python
+-> c code is easier to use in python
+-> for c++ you have to do some extra steps to use in python
