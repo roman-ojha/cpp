@@ -1,0 +1,3 @@
+*) Ctypegen:
+    -> how to generate type for python from c langauge '.h' file to use in ctype
+    -> https://pypi.org/project/ctypesgen/
