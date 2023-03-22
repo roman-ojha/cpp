@@ -34,9 +34,11 @@ int main()
     }
     // getting the address of the named function
     // auto fib = (int (*)(int))GetProcAddress(libHandle, "fib");
-    typedef int(__stdcall * f_funci)(int);
-    // f_funci opfunc = (f_funci)GetProcAddress(libHandle, "<name_of_the_function>");
-    f_funci fib = (f_funci)GetProcAddress(libHandle, "fib");
+
+    // now here we will define the function pointer type
+    typedef int(__stdcall * fib_func)(int);
+    // fib_func opfunc = (fib_func)GetProcAddress(libHandle, "<name_of_the_function>");
+    fib_func fib = (fib_func)GetProcAddress(libHandle, "fib");
     // so here we are getting the function called 'fib' and getting the pointer function so that we can call it
 
     // calling the function
