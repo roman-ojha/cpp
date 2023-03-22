@@ -20,3 +20,10 @@
     *) With include directories
     => g++ .\<file_name>.cpp -I"<path_to_include>"
     => EX: g++ .\main.cpp -I"include"
+
+
+*) Link multiple objects compiled files:
+    -> g++ .\<file_1>.o .\<file_2>.o
+
+*) Link multiple compiled object and create executable:
+    ->  g++ .\<file_1>.o .\<file_2>.o -o <exe_name>
