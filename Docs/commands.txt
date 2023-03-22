@@ -1,19 +1,23 @@
+*) Just to run the application:
+    -> g++ <app_name>.cpp
+
 *) Compile code
     => g++ -c .\<file_name>.cpp
-    *) Compile code with other include directories
-        => g++ -c .\<file_name>.cpp -I"<path_to_include>"
-        => EX: g++ .\main.cpp -I"include"
-        => EX:  g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
+
+*) Compile code with other include directories
+    => g++ -c .\<file_name>.cpp -I"<path_to_include>"
+    => EX: g++ .\main.cpp -I"include"
+    => EX:  g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
         
-    *) Create executable After compile:
-        => g++ .\<compiled_output_file>.o -o <executable_output_file_name>.exe
+*) Create executable After compile:
+    => g++ .\<compiled_output_file>.o -o <executable_output_file_name>.exe
 
-    *) Created executable with linking binaries libraries:
-        => g++ .\<compiled_output_file>.o -o <exe_file_name>.exe -L"<lib_folder_path>" -l<lib_file_name>
-        => EX: g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
+*) Created executable with linking binaries libraries:
+    => g++ .\<compiled_output_file>.o -o <exe_file_name>.exe -L"<lib_folder_path>" -l<lib_file_name>
+    => EX: g++ -c main.cpp -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -I"include"
 
-    *) All of them at once:
-        =>  g++ .\main.cpp -o main -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -L"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\lib" -lglfw3
+*) Compile with include directories and create exe with linking lib:
+    =>  g++ .\main.cpp -o main -I"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\include" -L"D:\Programming\Cpp\Tutorial\Libraries\02_Using_Binary_Library\lib" -lglfw3
 
 *) Create executable directly:
     => g++ .\<file_name>.cpp
@@ -27,3 +31,19 @@
 
 *) Link multiple compiled object and create executable:
     ->  g++ .\<file_1>.o .\<file_2>.o -o <exe_name>
+
+*) Create cpp shared libraries:
+    -> g++ -fPIC -c Library1.cpp // compile first file
+    -> g++ -fPIC -c Library2.cpp // compile second file
+    -> g++ -shared -o Library.so Library1.o Library2.o // create shared library
+
+*) Create Dynamic libraries:
+        -> g++ -c -D<Build_option_define_inside_header_file> <file_name>.cpp
+        -> g++ -shared -o <dll_file_name>.dll <object_file_name>.o -Wl,--out-implib,<a_output_file_name>.a
+        -> EX:
+            g++ -c -DBUILD_MY_DLL FibLibrary.cpp
+            g++ -shared -o FibLibrary.dll FibLibrary.o -Wl,--out-implib,libFibLibrary.a
+    
+*) Created executable by linking dynamic libraries:
+    -> g++ -c FibClient.cpp
+    -> g++ -o FibClient.exe FibClient.o -L. -lFibLibrary
