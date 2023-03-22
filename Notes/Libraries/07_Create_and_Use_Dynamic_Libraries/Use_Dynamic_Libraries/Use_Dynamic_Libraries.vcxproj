@@ -22,8 +22,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ba80761c-a07b-4221-8769-fda7610a131f}</ProjectGuid>
-    <RootNamespace>UsingDynamicLibraries</RootNamespace>
+    <ProjectGuid>{6fd2bc44-b717-44c8-8c64-f5817da7a1e6}</ProjectGuid>
+    <RootNamespace>UseDynamicLibraries</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

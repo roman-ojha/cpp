@@ -11,5 +11,12 @@
                 -> so, executable file is aware of the dynamic library it have to load
             2. dynamic linking:
                 -> we will write a code inside the cpp file where we will load the dynamic libraries as per our requirement
+        -> .dll(Dynamic Link libraries) is the file type that store the dynamic binary files
     *) Load Dynamic libraries on run times:
+        *) Visual studio setup:
+            -> we will crete two project on same solution
+                1. FibLibrary:
+                    -> here we will create our one library
+                2.
+                    -> here we will use that created library
 */
