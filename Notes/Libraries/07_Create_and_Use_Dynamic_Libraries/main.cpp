@@ -9,7 +9,7 @@
             1. load it while executable is loading:
                 -> when you launch the executable at that time we will load the dynamic libraries.
                 -> so, executable file is aware of the dynamic library it have to load
-            2. dynamic linking:
+            2. dynamic linking or loading in run time:
                 -> we will write a code inside the cpp file where we will load the dynamic libraries as per our requirement
         -> .dll(Dynamic Link libraries) is the file type that store the dynamic binary files
     *) Load Dynamic libraries when executable is loading:
@@ -32,4 +32,13 @@
                     -> after that we will link the 'FibLibrary.lib' library file and its path: './x64/Debug/' into the 'FibClient' project using properties linker
                     -> now we will build the application and it will create a executable file
                     -> NOTE: but after we create the executable file we have to copy the 'FibLibrary.dll' file into the same folder where the executable file is present, because the executable file don't worry about the '.lib' file but it just need the '.dll' file
+        *) Using Gcc compiler:
+            -> here we will create folder called Using_Gcc:
+                1. FibLibrary:
+                    -> first we will declare the header file in 'FibLibrary.h' file
+                    -> after that we will define the function in 'FibLibrary.cpp' file
+                    -> then we will build the library using 'build.bat' file
+                2. FibClient:
+                    -> first we will write some code in 'FibClient.cpp' file
+                    -> after that we will build the application and create executable using 'build_exe.bat' file
 */

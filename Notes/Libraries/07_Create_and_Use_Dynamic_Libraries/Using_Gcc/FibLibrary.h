@@ -1,9 +1,6 @@
 #pragma once
 
 // you have to define this to be able to generate '.lib', '.dll', '.exp' files
-// first we will define the macro
-#ifdef FIBLIBRARY
-#define FIBLIBRARY
 
 #ifdef __cplusplus
 extern "C"
@@ -25,5 +22,3 @@ extern "C"
 
 // declaring the another function outside the extern "C" block
 void SHARED_LIB helloWorld();
-
-#endif // end of DLL
