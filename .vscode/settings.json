@@ -2,6 +2,7 @@
   "isGitignoreExtActive": true,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "ostream": "cpp"
   }
 }
