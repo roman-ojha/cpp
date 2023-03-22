@@ -22,8 +22,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6fd2bc44-b717-44c8-8c64-f5817da7a1e6}</ProjectGuid>
-    <RootNamespace>UseDynamicLibraries</RootNamespace>
+    <ProjectGuid>{a29fa70c-d4ac-430f-a9a1-e68a25f2b6cf}</ProjectGuid>
+    <RootNamespace>FibClient</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

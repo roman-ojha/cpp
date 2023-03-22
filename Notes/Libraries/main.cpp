@@ -14,6 +14,7 @@
         -> .dll(Dynamic Link libraries) is the file type that store the dynamic binary files
     *) Load Dynamic libraries on run times:
         *) Visual studio setup:
+            -> https://learn.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-170
             -> we will crete two project on same solution
                 1. FibLibrary:
                     -> here we will create our one library
