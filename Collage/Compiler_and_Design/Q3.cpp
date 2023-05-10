@@ -1,103 +1,228 @@
 // Q3. Write a program to simulate lexical analyser for validating operators.
-#include<iostream>
-#include<string>
-#include<string.h>
+#include <iostream>
+#include <string>
+#include <string.h>
 using namespace std;
 
-int isOperator(char str[]){
-    switch(str[0]){
-        case '+':
-            if(str[1]=='+')
-                cout<<"Increment operator"<<endl;
-            else if(str[1]=='=')
-                cout<<"Assignment operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"+ Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '-':
-            if(str[1]=='-')
-                cout<<"Decrement operator"<<endl;
-            else if(str[1]=='=')
-                cout<<"Assignment operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"- Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '*':
-            if(str[1]=='*')
-                cout<<"Square operator"<<endl;
-            else if(str[1]=='=')
-                cout<<"Assignment operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"* Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '/':
-            if(str[1]=='=')
-                cout<<"Assignment operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"/ Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '%':
-            if(str[1]=='=')
-                cout<<"Assignment operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"\% Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '<':
-            if(str[1]=='\0')
-                cout<<"< Operator"<<endl;
-            else if(str[1] == '=')
-                cout<<"<= Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '>':
-            if(str[1]=='\0')
-                cout<<"> Operator"<<endl;
-            else if(str[1] == '=')
-                cout<<">= Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '=':
-            if(str[1]=='\0')
-                cout<<"> Operator"<<endl;
-            else if(str[1] == '=')
-                cout<<">= Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '&':
-            if(str[1]=='&')
-                cout<<"&& Operator"<<endl;
-            else if(str[1] == '\0')
-                cout<<"& Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        case '|':
-            if(str[1]=='|')
-                cout<<"|| Operator"<endl;
-            else if(str[1] == '\0')
-                cout<<"& Operator"<<endl;
-            else
-                cout<<"Invalid Operator"<<endl;
-        default:
-            cout<<"Invalid Operator"<<endl;
+void isOperator(string str)
+{
+    switch (str[0])
+    {
+    case '+':
+        if (str[1] == '+')
+        {
+            cout << "Increment operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout
+                << "Assignment operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout
+                << "+ Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '-':
+        if (str[1] == '-')
+        {
+            cout << "Decrement operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << "Assignment operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "- Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '*':
+        if (str[1] == '*')
+        {
+            cout << "Square operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << "Assignment operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "* Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '/':
+        if (str[1] == '=')
+        {
+            cout << "Assignment operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "/ Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '%':
+        if (str[1] == '=')
+        {
+            cout << "Assignment operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "\% Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '<':
+        if (str[1] == '\0')
+        {
+            cout << "< Operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << "<= Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '>':
+        if (str[1] == '\0')
+        {
+            cout << "> Operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << ">= Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '=':
+        if (str[1] == '\0')
+        {
+            cout << "> Operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << ">= Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '&':
+        if (str[1] == '&')
+        {
+            cout << "&& Operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "& Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '|':
+        if (str[1] == '|')
+        {
+            cout << "|| Operator" << endl;
+            break;
+        }
+        else if (str[1] == '\0')
+        {
+            cout << "& Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    case '!':
+        if (str[1] == '\0')
+        {
+            cout << "! Operator" << endl;
+            break;
+        }
+        else if (str[1] == '=')
+        {
+            cout << "!= Operator" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Operator" << endl;
+            break;
+        }
+    default:
+        cout << "Invalid Operator" << endl;
+        break;
     }
 }
 
-int main(){
-    char str[100];
-    while(true){
-        cout<<"Enter a string: "<<endl;
-        gets(str);
+int main()
+{
+    string str;
+    while (true)
+    {
+        cout << "Enter a string: " << endl;
+        getline(cin, str);
         isOperator(str);
-        int flag;
-        cout<<"Do you want to try it again: ";
-        cin>>flag;
-        if(flag==0){
+        int repeat;
+        cout << "Do you want to try it again: ";
+        cin >> repeat;
+        cin.ignore();
+        if (repeat == 0)
+        {
             break;
         }
     }
+    return 0;
 }
