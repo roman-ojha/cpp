@@ -3,9 +3,9 @@
 #include <ctype.h>
 #include <stdio.h>
 
-void keyword(char str[10])
+void isKeyword(char str[10])
 {
-    if (strcmp("for", str) == 0 || strcmp("while", str) == 0 || strcmp("do", str) == 0 || strcmp("int", str) == 0 || strcmp("void", str) == 0 || strcmp("float", str) == 0 || strcmp("char", str) == 0 || strcmp("double", str) == 0 || strcmp("static", str) == 0 || strcmp("switch", str) == 0 || strcmp("case", str) == 0)
+    if (strcmp("struct", str) == 0 || strcmp("union", str) == 0 || strcmp("short", str) == 0 || strcmp("if", str) == 0 || strcmp("double", str) == 0 || strcmp("else", str) == 0 || strcmp("extern", str) == 0 || strcmp("return", str) == 0 || strcmp("typedef", str) == 0 || strcmp("enum", str) == 0 || strcmp("default", str) == 0 || strcmp("continue", str) == 0 || strcmp("switch", str) == 0 || strcmp("inline", str) == 0 || strcmp("const", str) == 0 || strcmp("case", str) == 0 || strcmp("break", str) == 0 || strcmp("auto", str) == 0 || strcmp("for", str) == 0 || strcmp("while", str) == 0 || strcmp("do", str) == 0 || strcmp("int", str) == 0 || strcmp("void", str) == 0 || strcmp("float", str) == 0 || strcmp("char", str) == 0 || strcmp("double", str) == 0 || strcmp("static", str) == 0 || strcmp("switch", str) == 0 || strcmp("case", str) == 0)
         printf("\n%s is a keyword", str);
     else
         printf("\n%s is an identifier", str);
@@ -13,79 +13,82 @@ void keyword(char str[10])
 
 int main()
 {
-    FILE *f1, *f2, *f3;
+    FILE *fp, *fw, *fos;
     char c, str[10], st1[10];
-    int num[100], lineno = 0, tokenvalue = 0, i = 0, j = 0, k = 0;
-    printf("\n Enter the c program : "); /*gets(st1);*/
-    f1 = fopen("input", "w");
+    int num[100];
+    int tval = 0;
+    int i = 0, j = 0, k = 0;
+    printf("Write a C program here and end with ^Z: ");
+    fp = fopen("input.txt", "w");
+
     while ((c = getchar()) != EOF)
-        putc(c, f1);
-    fclose(f1);
-    f1 = fopen("input", "r");
-    f2 = fopen("identifier", "w");
-    f3 = fopen("specialchar", "w");
-    while ((c = getc(f1)) != EOF)
+        putc(c, fp);
+    fclose(fp);
+
+    fp = fopen("input.txt", "r");
+    fw = fopen("identifier.txt", "w");
+    fos = fopen("special.txt", "w");
+
+    while ((c = getc(fp)) != EOF)
     {
-        if (isdigit(c))
+        if (isalpha(c))
         {
-            tokenvalue = c - '0';
-            c = getc(f1);
-            while (isdigit(c))
-            {
-                tokenvalue *= 10 + c - '0';
-                c = getc(f1);
-            }
-            num[i++] = tokenvalue;
-            ungetc(c, f1);
-        }
-        else if (isalpha(c))
-        {
-            putc(c, f2);
-            c = getc(f1);
+            putc(c, fw);
+            c = getc(fp);
             while (isdigit(c) || isalpha(c) || c == '_' || c == '$')
             {
-                putc(c, f2);
-                c = getc(f1);
+                putc(c, fw);
+                c = getc(fp);
             }
-            putc(' ', f2);
-            ungetc(c, f1);
+            putc(' ', fw);
+            ungetc(c, fp);
+        }
+        else if (isdigit(c))
+        {
+            tval = c - '0';
+            c = getc(fp);
+            while (isdigit(c))
+            {
+                tval *= 10 + c - '0';
+                c = getc(fp);
+            }
+            num[i++] = tval;
+            ungetc(c, fp);
         }
         else if (c == ' ' || c == '\t')
             printf(" ");
-        else if (c == '\n')
-            lineno++;
         else
-            putc(c, f3);
+            putc(c, fos);
     }
-    fclose(f2);
-    fclose(f3);
-    fclose(f1);
-    printf("\n The no's in the program are  :");
-    for (j = 0; j < i; j++)
-        printf("%d \t", num[j]);
-    printf("\n");
-    f2 = fopen("identifier", "r");
+    fclose(fw);
+    fclose(fos);
+    fclose(fp);
+    fw = fopen("identifier.txt", "r");
     k = 0;
-    printf("The keywords and identifiers are:");
-    while ((c = getc(f2)) != EOF)
+    printf("\nThe keywords and identifiers are:");
+    while ((c = getc(fw)) != EOF)
     {
         if (c != ' ')
             str[k++] = c;
         else
         {
             str[k] = '\0';
-            keyword(str);
+            isKeyword(str);
             k = 0;
         }
     }
-    fclose(f2);
-    f3 = fopen("specialchar", "r");
-    printf("\n Special characters are : ");
-    while ((c = getc(f3)) != EOF)
+    fclose(fw);
+    printf("\nThe Numbers in the program are  :");
+    for (j = 0; j < i; j++)
+        printf("%d , ", num[j]);
+    fos = fopen("special.txt", "r");
+    printf("\nSpecial characters are : ");
+    while ((c = getc(fos)) != EOF)
         printf("%c", c);
-    printf("\n");
-    fclose(f3);
-    printf("Total no. of lines are:%d", lineno);
+    fclose(fos);
+
+    printf("\nName: Roman Ojha");
+    printf("\nRoll.No: 25");
 
     return 0;
 }
